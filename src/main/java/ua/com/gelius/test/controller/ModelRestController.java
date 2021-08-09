@@ -28,6 +28,6 @@ public class ModelRestController {
             @RequestParam int value1,
             @RequestParam int value2,
             @PathVariable Integer id) {
-        return service.plus(value1, value2, id);
+        return service.minus(value1, value2, id);
     }
 }
