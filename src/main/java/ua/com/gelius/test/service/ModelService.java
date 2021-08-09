@@ -11,7 +11,11 @@ import ua.com.gelius.test.repository.ModelRepository;
 @Transactional(readOnly = true)
 public class ModelService {
 
-    private ModelRepository repository;
+    final private ModelRepository repository;
+
+    public ModelService(ModelRepository repository) {
+        this.repository = repository;
+    }
 
     public Model plus (int value1, int value2, int id) {
         Model model = repository.findById(id).orElseThrow(() -> new NotFoundException(ErrorMessage.NOT_FOUND_ID.getMessage() + id));
