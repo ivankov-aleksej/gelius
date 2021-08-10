@@ -4,13 +4,22 @@
     <meta charset="UTF-8"/>
     <title>Test project for Gelius LTD</title>
     <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/noty/3.1.4/lib/noty.js}"></script>
     <script href="/js/script.js" th:src="@{/js/script.js}" defer></script>
     <link rel="stylesheet" th:href="@{/css/style.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/noty/3.1.4/lib/noty.css}"/>
 </head>
 
 <body>
 <div class="container">
     <div class="center">
+        <div class="form-group">
+            <label for="id">id:</label><br>
+            <select id="id" name="id">
+                <option selected="selected">1</option>
+                <option>10</option>
+            </select>
+        </div>
         <form id="values">
             <div class="form-group">
                 <label for="value1">Value 1:</label><br>

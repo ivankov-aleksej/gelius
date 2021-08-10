@@ -1,22 +1,28 @@
-let id = 1
+let failedNote
 
 $("#plus").click(function () {
+    let id = $("#id").val()
     $.ajax({
         type: "GET",
         url: "/api/model/plus/" + id,
         data: $("#values").serialize()
     }).done(function (data) {
         showResult(data.value, "green")
+    }).fail(function (event) {
+        failNoty(event)
     })
 })
 
 $("#minus").click(function () {
+    let id = $("#id").val()
     $.ajax({
         type: "GET",
         url: "/api/model/minus/" + id,
         data: $("#values").serialize()
     }).done(function (data) {
         showResult(data.value, "red")
+    }).fail(function (event) {
+        failNoty(event)
     })
 })
 
@@ -41,3 +47,19 @@ function showResult(value, color) {
     )
 }
 
+function closeNoty() {
+    if (failedNote) {
+        failedNote.close()
+        failedNote = undefined
+    }
+}
+
+function failNoty(value) {
+    closeNoty()
+    let errorInfo = value["responseJSON"]
+    failedNote = new Noty({
+        text: errorInfo["error"] + "<br>" + errorInfo["message"] + "<br>",
+        type: "error",
+        layout: "bottomRight"
+    }).show()
+}
