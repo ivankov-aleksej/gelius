@@ -1,0 +1,64 @@
+.container {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center {
+    width: 300px;
+}
+
+.form-group {
+    margin: 1em auto;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    margin-inside: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#plus {
+    background-color: green;
+}
+
+#minus {
+    background-color: red;
+    margin-left: 10px;
+}
+
+#okno {
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background-color: #ffff00;
+
+}
+
+.run-animation {
+    -webkit-animation-name: my-blink;
+    -webkit-animation-duration: 1s;
+    animation-name: my-blink;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes my-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes my-blink {
+    50% {
+        opacity: 0;
+    }
+}
