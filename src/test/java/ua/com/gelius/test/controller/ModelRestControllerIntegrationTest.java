@@ -27,7 +27,6 @@ class ModelRestControllerIntegrationTest {
 
     private final String PART_OF_URL = "/api/model";
     private final int ID = 1;
-    private final int notFoundID = 10;
 
     private final int value1 = 2;
     private final int value2 = 3;
@@ -82,7 +81,7 @@ class ModelRestControllerIntegrationTest {
 
     @Test
     void notFound() throws Exception {
-        final int resultMinus = 2;
+        final int notFoundID = 10;
 
         String content = mockMvc.perform(get(PART_OF_URL + "/plus/" + notFoundID)
                 .param("value1", String.valueOf(value1))
