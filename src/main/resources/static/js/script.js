@@ -27,7 +27,7 @@ $("#minus").click(function () {
 })
 
 function showResult(value, color) {
-    let item = $("#okno")
+    let item = $("#block")
     if (value > 0) {
         item.removeClass("run-animation").removeAttr("style")
         item.width()
